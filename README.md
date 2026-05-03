@@ -1,30 +1,73 @@
-# Smart Parking System using IoT
 
-## Overview:
-In urban environments, efficient parking management is crucial. This project introduces a Smart Parking System leveraging IoT technologies to address the challenges associated with traditional parking systems. By integrating wireless sensor networks, real-time data processing, and Arduino Uno microcontroller, the system aims to optimize parking processes and enhance user experience.
+# Smart Car Parking System 
 
-## Abstract:
-The Smart Parking System offers a sophisticated solution to the perennial problem of urban parking. By harnessing IoT technologies, it provides accurate parking space information, automates access control, and facilitates seamless user interaction. This project signifies a paradigm shift in parking management, offering convenience, efficiency, and sustainability.
+An IoT-based smart parking system that enables real-time slot monitoring and predicts future parking availability using time-series forecasting.
 
-## Key Features:
-- **Sensor Integration:** Utilizes infrared sensors for precise detection of vehicle presence and parking space availability updates.
-- **LCD Display:** Offers intuitive visual feedback to guide drivers to vacant spots, enhancing the parking experience.
-- **Access Control:** Implements a servo motor mechanism for authorized vehicle entry/exit, ensuring security and convenience.
-- **Centralized Management:** Monitors parking space availability and facilitates informed decision-making through a centralized management system.
+---
 
-## Usage:
-1. **Hardware Setup:** Install Arduino Uno, LCD screen, infrared sensors, servo motor, etc., as per the provided instructions.
-2. **Code Upload:** Upload the provided Arduino code to the Arduino Uno board using Arduino IDE.
-3. **Deployment:** Deploy the system in the desired parking location, ensuring proper functionality.
-4. **Access Information:** Stay informed about real-time parking space availability through the user-friendly LCD display.
+## Overview
 
-## Future Enhancements:
-- **Scalability:** Seamless integration with existing IoT ecosystems to enhance functionality and interoperability.
-- **Advanced Analytics:** Implementation of predictive analytics using machine learning techniques for optimized parking space utilization.
-- **Dynamic Pricing:** Introduction of dynamic pricing models based on real-time demand and supply to maximize revenue.
-- **Smart City Integration:** Collaboration with broader smart city initiatives to improve traffic management and urban mobility.
+This system uses sensors and microcontrollers to detect parking slot occupancy, automate entry control, and send real-time data to a database. Historical data is analyzed using the ARIMA model to forecast future parking availability.
 
-## References:
-A compilation of scholarly works and research papers on smart parking systems, microcontroller-based parking solutions, and traffic management strategies.
+---
 
+## Features
+
+* Real-time slot detection using IR sensors
+* Automated gate control (servo motor)
+* Live slot display via LCD
+* Fire alert integration
+* IoT-based data transmission (ESP8266)
+* Predictive analysis for parking availability
+
+---
+
+## Tech Stack
+
+**Hardware**
+
+* Arduino Uno
+* IR Sensors
+* Servo Motor
+* LCD Display
+* ESP8266
+
+**Software**
+
+* Embedded C (Arduino programming)
+* Python (data analysis & forecasting)
+* pandas, numpy (data processing)
+* statsmodels (ARIMA model)
+* Firebase / MySQL
+
+---
+
+## System Architecture
+
+1. Sensors detect vehicle entry/exit
+2. Arduino updates slot count
+3. Servo controls gate based on availability
+4. Data sent via ESP8266 to database
+5. Python processes historical data
+6. ARIMA model predicts future slots
+
+---
+
+## Data Format
+
+```
+timestamp | available_slots
+```
+
+---
+
+## How It Works
+
+* Entry detected → slot count decreases
+* Exit detected → slot count increases
+* Data stored in database with timestamps
+* Python fetches and preprocesses data
+* ARIMA model forecasts future availability
+
+---
 
